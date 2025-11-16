@@ -16,7 +16,7 @@
 <a class="name" target="_blank" href="https://sites.google.com/site/yinglongxia/">Yinglong Xia<sup>1</sup></a>,
 <a class="name" target="_blank" href="https://www.linkedin.com/in/zhuoran/">Zhuoran Yu<sup>1</sup></a>,
 <a class="name" target="_blank" href="https://zheng80.github.io/">Zeyu Zheng<sup>2</sup></a>, 
-<a class="name" target="_blank" href="https://dyang39.github.io/">Diji Yang<sup>3</sup></a>,
+<a class="name" target="_blank" href="https://dyang39.github.io/">Diji Yang<sup>3</sup></a>
 <br>
 <sup>1</sup>Meta AI. 
 <sup>2</sup>BAIR, UC Berkeley.
