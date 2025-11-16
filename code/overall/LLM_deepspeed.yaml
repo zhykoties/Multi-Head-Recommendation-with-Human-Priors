@@ -1,0 +1,57 @@
+# general
+seed: 2020
+state: INFO
+use_text: True
+reproducibility: True
+checkpoint_dir: '/user/fsx/saved_path'
+load_checkpoint_name: null
+show_progress: True
+
+log_wandb: False
+wandb_project: 'HLLM'
+MAX_ITEM_LIST_LENGTH: 50
+MAX_TEXT_LENGTH: 64
+
+data_path: /user/fsx/dataset/  # dataset path
+dataset: Pixel8M  # dataset name
+image_dir: /user/fsx/images
+tag_path: /user/fsx/tags/  # Use absolute path
+
+text_path: /user/fsx/information/  # Use absolute path
+text_keys: ['title', 'tag', 'description']
+
+item_prompt: 'Compress the following sentence into embedding: '
+item_emb_token_n: 1
+
+loss: nce
+neg_sample_mode: null
+pad_random_sample: True
+
+# training settings
+epochs: 10
+train_batch_size: 8
+optim_args: {
+  learning_rate: 1e-4,
+  weight_decay: 0.01
+}
+scheduler_args: {
+  type: cosine,
+  warmup: 0.1
+}
+
+# eval settings
+category_by: 'item'
+eval_batch_size: 256
+topk: [5,10,50,200]
+metrics: ['Recall', 'NDCG']
+shared_metrics: ['Entropy']
+valid_metric: NDCG@10
+metric_decimal_place: 7
+eval_step: 1
+stopping_step: 5
+metrics_pred_len_list: [1]  # eval_pred_len will be appended by default
+
+strategy: deepspeed
+precision: bf16-mixed
+stage: 2
+accumulate_grad: 1

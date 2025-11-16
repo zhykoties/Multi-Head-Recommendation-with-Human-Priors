@@ -1,0 +1,38 @@
+model: HLLM
+item_pretrain_dir: item_pretrain_dir # Item and User LLM are initialized by pretrain_dir
+item_llm_init: True
+user_pretrain_dir: user_pretrain_dir
+user_llm_init: True
+use_ft_flash_attn: True
+dummy_llm: False
+save_model_note: "default"
+timestamp_required: False
+rating_required: False
+use_image_online: False
+use_image: False
+img_height: 224
+img_width: 224
+total_iters: 3000
+eval_interval: 300
+freeze_prefix: ['item_llm.visual']
+
+eval_pred_len: 1
+pred_len: 1
+
+split_mode: combine
+medusa_lambda: 0.99
+medusa_num_layers: 0
+num_segment_head: 1
+num_prior_head: 1
+head_interaction: "multiplicative"
+eval_num_cats: 1
+
+neg_sample_by_cat: True  # specific to loss == 'prior'
+neg_sample_mix_ratio: 0
+pos_sample_mix_ratio: 0
+prior_switch: null
+use_prior_switch_test: True
+prior_switch_loss_weight: 0
+weighted_prior_loss: True
+tag_version: "v1"
+outlier_user_metrics: "category"  # whether to compute metrics just for when the target items belong to some categories different from the context items

@@ -1,0 +1,47 @@
+model: DualVAE
+verbose: True
+# Latent dimension per aspect (d or k). The authors reported d=64 as optimal.
+vae_latent_dim: 32
+# Number of aspects (A or a). Tuned in {2..10}. 6 was frequently optimal.
+vae_num_aspects: 5
+# Note: Total capacity = 64 * 6 = 384.
+
+# Encoder/Decoder MLP structures. The paper emphasizes "shallow networks".
+# The structure defines the hidden layers.
+vae_encoder_structure: [64]
+vae_decoder_structure: [64]
+
+
+# Activation function. Tanh is common in VAEs and used in the implementation.
+vae_act_fn: 'tanh'
+
+# ------------------------------------------------------------------------------------
+# Training and Optimization
+# ------------------------------------------------------------------------------------
+
+# DualVAE uses Alternating Optimization (AO), relying on epochs (full passes over users/items).
+total_iters: 30000
+eval_interval: 3000
+learning_rate: 0.001
+batch_size: 512
+
+# ------------------------------------------------------------------------------------
+# Regularization (Crucial for Disentanglement)
+# ------------------------------------------------------------------------------------
+
+# Weight for KL divergence (beta). 1.0 is the standard VAE weight.
+vae_beta_kl: 0.01
+vae_aspect_temperature: 0.5 # Temperature scaling for sharper aspect assignments.
+
+# Weight for Contrastive Loss (gamma). Controls the NRC module.
+# The authors found 0.01 optimal for several datasets.
+vae_gama_cl: 0.01
+eval_pred_len: 1
+pred_len: 1
+split_mode: combine
+
+hidden_dropout_prob: 0.2
+# 2. NEW: Information Dropout
+vae_latent_dropout: 0.2   # Recommended starting point: 0.2 to 0.4
+vae_ortho_lambda: 0.1     # Recommended starting point: 0.01 to 0.1
+vae_kl_anneal_steps: 10000  # Ensure annealing is active

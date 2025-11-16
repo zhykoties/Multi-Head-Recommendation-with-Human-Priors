@@ -1,0 +1,9 @@
+.idea
+.DS_Store
+*.pyc
+*.log
+Books.json
+meta_Books.jsoN
+code/log/
+code/log_tensorboard/
+code/saved/
