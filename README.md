@@ -60,5 +60,8 @@ If you find this repo useful for your research and applications, please cite usi
 }
 ```
 
+## Copyright
+THIS SOFTWARE AND/OR DATA WAS DEPOSITED IN THE BAIR OPEN RESEARCH COMMONS REPOSITORY ON NOVEMBER 16, 2025.
+
 ## Acknowledgement
 We want to thank the HLLM codebase from ByteDance: https://github.com/bytedance/HLLM
