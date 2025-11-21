@@ -1,7 +1,7 @@
 # Don't Waste It: Guiding Generative Recommenders with Structured Human Priors via Multi-head Decoding
 <a target="_blank" href="https://arxiv.org/abs/2511.10492">
 <img style="height:22pt" src="https://img.shields.io/badge/-Paper-red?style=flat&logo=arxiv"></a>
-<a target="_blank" href="https://huggingface.co/collections/to-be-released">
+<a target="_blank" href="https://huggingface.co/datasets/zhykoties/Multi-Head-Recommendation-with-Human-Priors">
 <img style="height:22pt" src="https://img.shields.io/badge/-🤗%20Dataset-blue?style=flat"></a>
 
 <br>
